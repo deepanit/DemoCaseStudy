@@ -46,13 +46,10 @@ public class TextCensorprocessor {
 		response.setFeedbackRequest(request);
 		String text = request.getCommentText().toLowerCase();
 		for(String s : getBadWordsFromFile(response)) {
-			String [] sSplit = s.split(" ");
-			for(int i=0;i<sSplit.length;i++) {
-			if(text.indexOf(sSplit[i].toLowerCase())!=-1) {
+			if(text.indexOf(s.toLowerCase())!=-1) {
 				response.setStatus(Constants.STATUS_PROCESS_SUCCESS);
 				response.setCommentFeedback(Constants.STATUS_CONTENT_OBJECTED);
 				return response;
-			}
 			}
 		}
 		response.setStatus(Constants.STATUS_PROCESS_SUCCESS);
