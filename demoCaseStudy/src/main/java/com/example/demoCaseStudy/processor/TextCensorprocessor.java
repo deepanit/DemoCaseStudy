@@ -26,7 +26,7 @@ public class TextCensorprocessor {
 
 			String str ="";
 			br.readLine();
-			while(( str = br.readLine())!=null) {
+			while(( str = br.readLine())!=null)  {
 				if(!badwords.contains(str) && !str.equals(""))
 					badwords.add(str);
 			}
